@@ -7,10 +7,10 @@ WINDOW_SIZE = 10
 window = deque(maxlen=WINDOW_SIZE)
 
 TEST_SERVER_URLS = {
-    'p': 'http://20.244.56.144/test/prime',
-    'f': 'http://20.244.56.144/test/fibonacci',
+    'p': 'http://20.244.56.144/test/primes',
+    'f': 'http://20.244.56.144/test/fibo',
     'e': 'http://20.244.56.144/test/even',
-    'r': 'http://20.244.56.144/test/random'
+    'r': 'http://20.244.56.144/test/rand'
 }
 
 def fetch_numbers(number_id):
@@ -43,3 +43,10 @@ def calculate_average(request, number_id):
         'windowCurrState': list(window),
         'avg': avg
     })
+
+    # return JsonResponse({
+    #     'numbers': [5,11,14,16,66,73,84,98],
+    #     'windowPrevState': [],
+    #     'windowCurrState': [5,11,14,16,66,73,84,98],
+    #     'avg': 45.875
+    # })
